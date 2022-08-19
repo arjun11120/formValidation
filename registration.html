@@ -1,0 +1,124 @@
+<html>
+ <head>
+    <title>Form validation</title>
+    <link rel="icon" type="image/x-icon" href="images/black-bg-icon.png">
+    <link rel="stylesheet" href="css/style2.css">   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<script>
+		function validateForm() {
+  			var name = document.myForm.sname.value;
+			let email = document.forms["myForm"]["email"].value;
+			let password = document.forms["myForm"]["pswd"].value;
+			let phonenumber = document.forms["myForm"]["phnum"].value;
+  			if (name == "" || email == "" || password == "" || phonenumber == "")  {
+    				alert("All feild must be filled out");
+    				return false;
+  			}
+		}
+		function vm(x) 
+		{
+ 			if (x.value=='')
+  			{
+    	
+    				alert("You must enter your name!");
+    				return false;
+			}
+		}
+		function vm1(x) 
+		{
+ 			if (x.value=='')
+  			{
+    	
+    				alert("Feild is empty!...Enter your address");
+    				return false;
+			}
+		}
+		function ValidateEmail(mail) 
+		{
+ 			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value))
+  			{
+    				return (true);
+  			}
+    				alert("You have entered an invalid email address!");
+    				return false;
+		}
+		function CheckPassword(x) 
+		{ 
+		var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+		if(x.value.match(decimal)) 
+		{ 
+			return true;
+		}
+		else
+		{ 
+			alert("Wrong...!..Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters");
+			return false;
+		}
+}
+		function myFunction() {
+  			var x = document.getElementById("myInput");
+  			if (x.type === "password") {
+    			x.type = "text";
+  			} else {
+    				x.type = "password";
+  				}
+}
+		function phonenumber(inputtxt)
+		{
+ 		var phoneno = /^\d{10}$/;
+  		if(inputtxt.value.match(phoneno))
+  		{
+      			return true;
+  		}
+  			else
+  		{
+     			alert("Not a valid Phone Number");
+     			return false;
+  		}
+  }
+	</script>
+ </head>
+ <body>
+ 	<div class="container">
+		<div class="box1" >
+			<form name="myForm" action=""  method="post">
+				<div class="frm-title">
+					<h1>Form Validation</h1>
+				</div>
+				<div class="input-container">
+    					<span class="material-symbols-outlined">person</span>
+    					<input class="input-field" type="text" placeholder="Enter your name" name="sname" onblur="return vm(this)">
+  				</div>
+				<div class="input-container">   					
+					<span class="material-symbols-outlined">email</span>
+    					<input class="input-field" type="text" placeholder="Enter your Email" name="email" onblur="ValidateEmail(document.myForm.email)">
+  				</div>			
+				<div class="input-container">
+    					<span class="material-symbols-outlined">key</span>
+					<input class="input-field"  name="pswd" type="password"placeholder="Enter your password" id="myInput" onblur=" return CheckPassword(this)">
+					<input id="show" type="checkbox" onclick="myFunction()">Show Password
+  				</div>
+				<div class="input-container">
+    					<span class="material-symbols-outlined">phone_iphone</span>
+    					<input class="input-field" type="text" placeholder="Enter your Phone number" name="phnum" onblur="phonenumber(this)">
+  				</div>
+				<div class="input-container">
+    					<span class="material-symbols-outlined">phone_iphone</span>
+    					<textarea class="input-field" type="text" placeholder="Enter your Address" name="address" onblur="return vm1(this)"></textarea>
+  				</div>
+				<div class="btn1">
+						<div class="btn1-in">
+					   		<input type="submit" value="Submit" onsubmit="return validateForm()">
+						</div>
+						<div class="btn1-spn">
+							<span class="material-symbols-outlined">login</span>
+						</div>
+				</div>
+			</form>							
+			</div>
+
+	</div>
+
+ </body>
+
+</html>
