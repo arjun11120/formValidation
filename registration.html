@@ -9,7 +9,7 @@
  <body>
  	<div class="container">
 		<div class="box1" >
-			<form name="myForm" action=""  method="post">
+			<form name="myForm" action=""  method="post" onsubmit="return validateForm()">
 				<div class="frm-title">
 					<h1>Form Validation</h1>
 				</div>
@@ -34,9 +34,17 @@
     					<span class="material-symbols-outlined">phone_iphone</span>
     					<textarea class="input-field" type="text" placeholder="Enter your Address" name="address" onblur="return vm1(this)"></textarea>
   				</div>
+				<div class="input-container ca1">
+					<span class="material-symbols-outlined">man</span>
+					<input type="radio" name="gender" value="men"> Male
+				</div>
+				<div class="input-container ca1">
+					<span class="material-symbols-outlined">woman</span>
+					<input type="radio" name="gender" value="women">Female
+				</div>
 				<div class="btn1">
 						<div class="btn1-in">
-					   		<input type="submit" value="Submit" onsubmit="return validateForm()">
+					   		<input type="submit" value="Submit">
 						</div>
 						<div class="btn1-spn">
 							<span class="material-symbols-outlined">login</span>

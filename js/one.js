@@ -1,9 +1,11 @@
 		function validateForm() {
   			var name = document.myForm.sname.value;
-			let email = document.forms["myForm"]["email"].value;
-			let password = document.forms["myForm"]["pswd"].value;
-			let phonenumber = document.forms["myForm"]["phnum"].value;
-  			if (name == "" || email == "" || password == "" || phonenumber == "")  {
+			var email = document.myForm.email.value;
+			var password = document.myForm.pswd.value;
+			var phonenumber = document.myForm.phnum.value;
+			var male = document.myForm.men.value;
+			var female = document.myForm.women.value;
+  			if (name == "" || email == "" || password == "" || phonenumber == "" || male == "" || female == "")  {
     				alert("All feild must be filled out");
     				return false;
   			}
